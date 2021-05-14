@@ -6,6 +6,7 @@ const inquirer = require("inquirer");
 // makes getting relative path eaiser
 const path = require("path");
 const fs = require("fs");
+// code coverage tool
 const { create } = require("istanbul-reports");
 
 const team = [];
