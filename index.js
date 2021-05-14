@@ -127,7 +127,7 @@ const createEngineer = () => {
     addMore();
   });
 };
-// when using await and async make sure to use them both.
+// when using await and async make sure to use them both. they work the same as .then
 // aysync saying, expect a promise in function
 const addMore = async () => {
   // await for promise to resolve, const answer is the answers to the prompt input.
@@ -163,7 +163,7 @@ const addMore = async () => {
 // now we have array of class objects, need to push into a new file index.html
 const buildTeam = () => {
   // write file sync syncronous, saying what file to put information (index.html) using templates
-  fs.writeFileSync(); // index.html
+  fs.writeFileSync("../index.html"); // ../index.html .. is to get outside of folder to where html file is located
 
   // use templates to generate to page
 
