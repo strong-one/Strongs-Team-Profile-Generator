@@ -1,3 +1,5 @@
+const Engineer = require("./Engineer");
+
 describe("Engineer", () => {
   describe("this is the base constructor class", () => {
     it("should output name, email and email with valid input", () => {
