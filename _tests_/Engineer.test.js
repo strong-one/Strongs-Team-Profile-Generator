@@ -1,7 +1,7 @@
-const Engineer = require("./Engineer");
+const Engineer = require("./utils/Engineer");
 
 describe("Engineer", () => {
-  describe("this is the base constructor class", () => {
+  describe("this is to test the engineer input", () => {
     it("should output name, email and email with valid input", () => {
       const name = "nick";
       const id = 1234;
@@ -16,7 +16,11 @@ describe("Engineer", () => {
       expect("gitHub" in obj).toEqual(gitHub);
     });
 
-    it("should throw error if invalid input", () => {});
+    it("should throw error if invalid input", () => {
+      const engineer = () => new Engineer();
+
+      expect(engineer).toThrow(error);
+    });
     it("should throw an error if not a string", () => {});
     it("should throw an error if is an empty string", () => {});
   });
