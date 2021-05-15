@@ -152,8 +152,8 @@ const addMore = async () => {
     case "Intern":
       createIntern();
       break;
-    case "Manger":
-      createManger();
+    case "Manager":
+      createManager();
       break;
     default:
       buildTeam();
@@ -163,11 +163,21 @@ const addMore = async () => {
 // now we have array of class objects, need to push into a new file index.html
 const buildTeam = () => {
   // write file sync syncronous, saying what file to put information (index.html) using templates
-  fs.writeFileSync("../index.html"); // ../index.html .. is to get outside of folder to where html file is located
+  // fs.writeFileSync("index.html", team, (error) => {
+  //   if (error) {
+  //     console.error("Something went wrong");
+  //     return;
+  //   }
+  // });
+  // function writeToFile(fileName, data) {
+  //   return fs.writeFile(path.join(__dirname + "/dist", fileName), data, (err) =>
+  //     err ? console.error(err) : console.log("Success!")
+  //   );
 
   // use templates to generate to page
 
-  const manager = ""; // insert template here
+  const manager = ` ${this.name}\n ID: ${this.id}\n Email: ${this.email}\n Office Number ${this.officeNumber}`; // insert template here
+
   const intern = ""; // insert template here
   const engineer = ""; // insert template here
 };
