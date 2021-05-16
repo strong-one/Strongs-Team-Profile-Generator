@@ -6,8 +6,6 @@ const inquirer = require("inquirer");
 // makes getting relative path eaiser
 const path = require("path");
 const fs = require("fs");
-// code coverage tool
-const { create } = require("istanbul-reports");
 
 const team = [];
 
@@ -160,42 +158,116 @@ const addMore = async () => {
       break;
   }
 };
+
 // now we have array of class objects, need to push into a new file index.html
 const buildTeam = () => {
   // write file sync syncronous, saying what file to put information (index.html) using templates
-  fs.writeFileSync("index.html", JSON.stringify(team), (error) => {
+  fs.writeFile("index.html", getTeamString(team), (error) => {
     if (error) {
-      console.error("Something went wrong");
+      console.error("Something went wrong...") ||
+        console.log("Building team...");
       return;
     }
   });
-  // function writeToFile(fileName, data) {
-  //   return fs.writeFile(path.join(__dirname + "/dist", fileName), data, (err) =>
-  //     err ? console.error(err) : console.log("Success!")
-  //   );
+};
 
-  // fs.writeFileSync(
-  //   path.join(__dirname, "index.html", (error) => {
-  //     if (error) {
-  //       console.log("Something went wrong");
-  //       return;
-  //     }
-  //     if (success) {
-  //       console.log("Team is ready to work");
-  //       return;
-  //     }
-  //   }),
-  //   buildTeam(response)
-  // );
+// use templates to generate to page
+const generateManager = function (member) {
+  //data = JSON.parse(manager);
+  const manager = `
+  <div class="card" style="width: 18rem">
+    <div class="card-header"> Manager </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">${member.getName()}</li>
+      <li class="list-group-item">${member.getId()}</li>
+      <li class="list-group-item">${member.getEmail()}</li>
+      <li class="list-group-item">${member.getOfficeNumber()}</li>
+    </ul>
+  </div>
+`;
 
-  // use templates to generate to page
+  return manager;
+}; // insert template here
 
-  const manager = `${this.name}\n ID: ${this.id}\n Email: ${this.email}\n Office Number ${this.officeNumber}`; // insert template here
+const generateIntern = function (member) {
+  const intern = `
+  <div class="card" style="width: 18rem">
+    <div class="card-header"> Intern </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">${member.getName()}</li>
+      <li class="list-group-item">${member.getId()}</li>
+      <li class="list-group-item">${member.getEmail()}</li>
+      <li class="list-group-item">${member.getSchool()}</li>
+    </ul>
+  </div>
+`;
+  return intern;
+}; // insert template here
 
-  const intern = ""; // insert template here
-  const engineer = ""; // insert template here
+const generateEngineer = function (member) {
+  const engineer = `
+  <div class="card" style="width: 18rem">
+    <div class="card-header"> Engineer </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">${member.getName()}</li>
+      <li class="list-group-item">${member.getId()}</li>
+      <li class="list-group-item">${member.getEmail()}</li>
+      <li class="list-group-item">${member.getGithub()}</li>
+    </ul>
+  </div>
+`;
+  return engineer;
+}; // insert template here
+
+const getTeamString = (team) => {
+  let cardTemplate = "";
+  team.forEach((member) => {
+    switch (member.getRole()) {
+      case "Engineer":
+        cardTemplate += generateEngineer(member);
+        break;
+      case "Manager":
+        cardTemplate += generateManager(member);
+        break;
+      case "Intern":
+        cardTemplate += generateIntern(member);
+        break;
+      default:
+        break;
+    }
+  });
+
+  const mainHTML = `
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        />
+        <link rel="stylesheet" href="./dist/style.css" />
+        <title>Team Generator</title>
+      </head>
+
+      <body>
+        <header class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <h1 class="display-4">My Team</h1>
+          </div>
+        </header>
+        <!-- cards go here -->
+        ${cardTemplate}
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+      </body>
+    </html>
+  `;
+
+  return mainHTML;
 };
 
 addMore();
 
-//buildTeam();
+//buildTeam()
