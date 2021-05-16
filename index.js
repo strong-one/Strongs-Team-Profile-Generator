@@ -255,13 +255,16 @@ const getTeamString = (team) => {
       </head>
 
       <body>
+        
         <header class="jumbotron jumbotron-fluid">
           <div class="container">
             <h1 class="display-4">My Team</h1>
           </div>
         </header>
-        <!-- cards go here -->
-        ${cardTemplate}
+        <section class = "sect-container">
+          <!-- cards go here -->
+          ${cardTemplate}
+        </section>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
       </body>
     </html>
