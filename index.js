@@ -178,10 +178,10 @@ const generateManager = function (member) {
   <div class="card" style="width: 18rem">
     <div class="card-header"> Manager </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item"> Name ${member.getName()}</li>
-      <li class="list-group-item"> ID Number ${member.getId()}</li>
-      <li class="list-group-item"> Email ${member.getEmail()}</li>
-      <li class="list-group-item"> Office Number ${member.getOfficeNumber()}</li>
+      <li class="list-group-item"> Name: ${member.getName()}</li>
+      <li class="list-group-item"> ID Number: ${member.getId()}</li>
+      <li class="list-group-item"> Email: ${member.getEmail()}</li>
+      <li class="list-group-item"> Office Number: ${member.getOfficeNumber()}</li>
     </ul>
   </div>
 `;
@@ -194,10 +194,10 @@ const generateIntern = function (member) {
   <div class="card" style="width: 18rem">
     <div class="card-header"> Intern </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item"> Name ${member.getName()}</li>
-      <li class="list-group-item"> ID Number ${member.getId()}</li>
-      <li class="list-group-item"> Email ${member.getEmail()}</li>
-      <li class="list-group-item"> School ${member.getSchool()}</li>
+      <li class="list-group-item"> Name: ${member.getName()}</li>
+      <li class="list-group-item"> ID Number: ${member.getId()}</li>
+      <li class="list-group-item"> Email: ${member.getEmail()}</li>
+      <li class="list-group-item"> School: ${member.getSchool()}</li>
     </ul>
   </div>
 `;
@@ -209,10 +209,10 @@ const generateEngineer = function (member) {
   <div class="card" style="width: 18rem">
     <div class="card-header"> Engineer </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item"> Name ${member.getName()}</li>
-      <li class="list-group-item"> ID Number ${member.getId()}</li>
-      <li class="list-group-item"> Email ${member.getEmail()}</li>
-      <li class="list-group-item"> GitHub ${member.getGithub()}</li>
+      <li class="list-group-item"> Name: ${member.getName()}</li>
+      <li class="list-group-item"> ID Number: ${member.getId()}</li>
+      <li class="list-group-item"> Email: ${member.getEmail()}</li>
+      <li class="list-group-item"> GitHub: ${member.getGithub()}</li>
     </ul>
   </div>
 `;
