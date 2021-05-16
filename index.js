@@ -92,6 +92,7 @@ const createManager = () => {
     //push the instacne of Manager into teams array
     team.push(newManager);
     //Add more?
+
     addMore();
   });
 };
@@ -173,7 +174,6 @@ const buildTeam = () => {
 
 // use templates to generate to page
 const generateManager = function (member) {
-  //data = JSON.parse(manager);
   const manager = `
   <div class="card" style="width: 18rem">
     <div class="card-header"> Manager </div>
