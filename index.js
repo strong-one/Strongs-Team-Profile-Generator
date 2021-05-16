@@ -178,10 +178,10 @@ const generateManager = function (member) {
   <div class="card" style="width: 18rem">
     <div class="card-header"> Manager </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">${member.getName()}</li>
-      <li class="list-group-item">${member.getId()}</li>
-      <li class="list-group-item">${member.getEmail()}</li>
-      <li class="list-group-item">${member.getOfficeNumber()}</li>
+      <li class="list-group-item"> Name ${member.getName()}</li>
+      <li class="list-group-item"> ID Number ${member.getId()}</li>
+      <li class="list-group-item"> Email ${member.getEmail()}</li>
+      <li class="list-group-item"> Office Number ${member.getOfficeNumber()}</li>
     </ul>
   </div>
 `;
@@ -194,10 +194,10 @@ const generateIntern = function (member) {
   <div class="card" style="width: 18rem">
     <div class="card-header"> Intern </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">${member.getName()}</li>
-      <li class="list-group-item">${member.getId()}</li>
-      <li class="list-group-item">${member.getEmail()}</li>
-      <li class="list-group-item">${member.getSchool()}</li>
+      <li class="list-group-item"> Name ${member.getName()}</li>
+      <li class="list-group-item"> ID Number ${member.getId()}</li>
+      <li class="list-group-item"> Email ${member.getEmail()}</li>
+      <li class="list-group-item"> School ${member.getSchool()}</li>
     </ul>
   </div>
 `;
@@ -209,16 +209,17 @@ const generateEngineer = function (member) {
   <div class="card" style="width: 18rem">
     <div class="card-header"> Engineer </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">${member.getName()}</li>
-      <li class="list-group-item">${member.getId()}</li>
-      <li class="list-group-item">${member.getEmail()}</li>
-      <li class="list-group-item">${member.getGithub()}</li>
+      <li class="list-group-item"> Name ${member.getName()}</li>
+      <li class="list-group-item"> ID Number ${member.getId()}</li>
+      <li class="list-group-item"> Email ${member.getEmail()}</li>
+      <li class="list-group-item"> GitHub ${member.getGithub()}</li>
     </ul>
   </div>
 `;
   return engineer;
 }; // insert template here
 
+// need to add function to loop through card generate functions to put into one variable so they can all populate to HTML
 const getTeamString = (team) => {
   let cardTemplate = "";
   team.forEach((member) => {
@@ -237,6 +238,7 @@ const getTeamString = (team) => {
     }
   });
 
+  // creating mainHTML variable to populate user input -- passing the let cardTemplate to populate all cards withuser input and returning it to populate
   const mainHTML = `
     <!DOCTYPE html>
     <html lang="en">
@@ -268,6 +270,7 @@ const getTeamString = (team) => {
   return mainHTML;
 };
 
+// calling add more function
 addMore();
 
 //buildTeam()
