@@ -1,5 +1,7 @@
 # Strongs-Team-Profile-Generator
 
+[Walkthrough video](https://drive.google.com/file/d/1eXGXKkszvI9PedmLpy2_YqbPyWJECVGm/view?usp=sharing)
+
 ## Description
 
 This is a team profile genetator, the user has selections of members of staff (Engineer, Intern and Manager) the user can enter information about the employee and will be populated on to an html file for easy viewing of all added team members.
