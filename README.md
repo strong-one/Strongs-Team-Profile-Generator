@@ -1,6 +1,6 @@
 # Strongs-Team-Profile-Generator
 
-[Walkthrough video](https://drive.google.com/file/d/1eXGXKkszvI9PedmLpy2_YqbPyWJECVGm/view?usp=sharing)
+[Walkthrough video](https://drive.google.com/file/d/1nQg-B-7SHCQujoCA_OQ9dfnYSinuEkx_/view?usp=sharing)
 
 ## Description
 

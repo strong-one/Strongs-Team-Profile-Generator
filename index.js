@@ -180,7 +180,7 @@ const generateManager = function (member) {
     <ul class="list-group list-group-flush">
       <li class="list-group-item"> Name: ${member.getName()}</li>
       <li class="list-group-item"> ID Number: ${member.getId()}</li>
-      <li class="list-group-item"> Email: ${member.getEmail()}</li>
+      <a href="mailto:${member.getEmail()}" ><li class="list-group-item"> Email: ${member.getEmail()}</li></a>
       <li class="list-group-item"> Office Number: ${member.getOfficeNumber()}</li>
     </ul>
   </div>
@@ -196,7 +196,7 @@ const generateIntern = function (member) {
     <ul class="list-group list-group-flush">
       <li class="list-group-item"> Name: ${member.getName()}</li>
       <li class="list-group-item"> ID Number: ${member.getId()}</li>
-      <li class="list-group-item"> Email: ${member.getEmail()}</li>
+      <a href="mailto:${member.getEmail()}" ><li class="list-group-item"> Email: ${member.getEmail()}</li></a>
       <li class="list-group-item"> School: ${member.getSchool()}</li>
     </ul>
   </div>
@@ -211,8 +211,8 @@ const generateEngineer = function (member) {
     <ul class="list-group list-group-flush">
       <li class="list-group-item"> Name: ${member.getName()}</li>
       <li class="list-group-item"> ID Number: ${member.getId()}</li>
-      <li class="list-group-item"> Email: ${member.getEmail()}</li>
-      <li class="list-group-item"> GitHub: ${member.getGithub()}</li>
+      <a href="mailto:${member.getEmail()}" ><li class="list-group-item"> Email: ${member.getEmail()}</li></a>
+      <a href="https://github.com/${member.getGithub()}"><li class="list-group-item"> GitHub: ${member.getGithub()}</li>
     </ul>
   </div>
 `;
